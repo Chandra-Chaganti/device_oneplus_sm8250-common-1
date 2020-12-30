@@ -311,6 +311,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libhwbinder.vendor
 
+# FOSS Config
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/FOSSConfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/FOSSConfig.xml
+
+# Graphics - Foss
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.display.foss=1 \
+    vendor.display.foss.config=1 \
+    vendor.display.foss.config_path=/vendor/etc/FOSSConfig.xml
+
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/hotwordenrollment-hiddenapi-package-allowlist.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/hotwordenrollment-hiddenapi-package-allowlist.xml \
